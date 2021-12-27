@@ -1,0 +1,23 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+        name: tomcat-mywebapp
+spec:
+        replicas: 1
+        selector:
+                matchLabels:
+                        name: tom-webapp
+        template:
+                metadata:
+                        name: webapp
+                        labels:
+                                name: tom-webapp
+                spec:
+                        containers:
+                                - name: c1
+                                  image: ashishsigmoid/mywebapp:latest
+                                  ports:
+                                          - containerPort: 8080
+
+                                
+                        

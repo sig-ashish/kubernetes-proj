@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+        name: tomcat-service
+spec:
+        ports:
+                - port: 80
+                  targetPort: 8080
+        selector:
+                name: tom-webapp
+        type: ClusterIP 
